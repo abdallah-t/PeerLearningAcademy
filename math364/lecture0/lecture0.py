@@ -13,7 +13,12 @@ class Introduction(Scene):
         self.play(Write(math364))
         self.wait(2)
         self.play(math364.animate.shift(3 * UP).scale(0.6))
+        self.wait()
         self.play(Write(abdallah, reverse=True))
+        self.add(abdallah)
+        self.wait(2)
+        self.play(Unwrite(math364))
+        self.play(Unwrite(abdallah))
         self.wait(2)
 
 
@@ -30,7 +35,7 @@ class CourseContent(Scene):
 
         
         point3 = Dot([6, -2, 0])
-        exam_tips = Text("نصائح الأداء الامتحانات", font=ARABIC_FONT, font_size=40, color=LOGO_RED)
+        exam_tips = Text("نصائح لأداء الامتحانات", font=ARABIC_FONT, font_size=40, color=LOGO_RED)
         exam_tips.next_to(point3, LEFT)
         
         self.play(Write(what_will_you_learn, reverse=True))
