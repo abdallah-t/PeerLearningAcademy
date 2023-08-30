@@ -1,5 +1,3 @@
-*.svg
-*.tex
-*.log
-*.aux
+Tex/
+text/
 partial_movie_files/
