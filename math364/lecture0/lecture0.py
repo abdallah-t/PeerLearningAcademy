@@ -8,12 +8,13 @@ ENGLISH_FONT = "CMU Serif"
 
 class Introduction(Scene):
     def construct(self):
-        math364 = Text("Math364", font=ARABIC_FONT, font_size=70)
-        abdallah = Text("عبدالله طنطاوي", font=ENGLISH_FONT, font_size=70, color=LOGO_GREEN)
+        math364 = Text("Math364", font=ENGLISH_FONT, font_size=70)
+        abdallah = Text("عبدالله طنطاوي", font=ARABIC_FONT, font_size=70, color=LOGO_GREEN)
         self.play(Write(math364))
         self.wait(2)
         self.play(math364.animate.shift(3 * UP).scale(0.6))
         self.play(Write(abdallah, reverse=True))
+        self.wait(2)
 
 
 class CourseContent(Scene):
