@@ -1,0 +1,5 @@
+*.svg
+*.tex
+*.log
+*.aux
+partial_movie_files/
