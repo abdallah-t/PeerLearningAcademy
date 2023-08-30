@@ -2,25 +2,21 @@
 
 ## Who am I?
 
-My name is Abdullah Tantawy and I'm a first year computer science student. I'm also a math enthusiast and I love to teach math. And I want to share my knowledge on how I got the full mark in this course with you.
+My name is Abdullah Tantawy and I'm a first year computer science student. I'm also a math enthusiast and I love to teach math. And I want to share my knowledge on how I got the full mark in this course with you. I will be your helper and in your journey.
 
 ## What are we going to study in this course?
 
-this course consists of 3 units:
+- ### content
 
-- ### unit 1: Trigonometry
+- ### how to use the calculator
 
-    dealing with triangles and their properties and relations between their sides and angles.
+- ### exam tips and tricks
 
-    this would be the most important unit in this course.
+## What is special about this course?
 
-- ### unit 2: analzying functions
-
-    dealing with functions and their properties and relations between their variables and the curve it makes.
-
-- ### unit 3: limits and derivatives
-
-    dealing with the limit of a function and the derivative of a function.
+- ### I'll provide you with math animation to help you understand the concepts better.
+- ### I am almost as old as you so I know what you are going through and you feel more comfortable asking me questions.
+- ### I will be posting lecture videos on youtube so you can watch them at your own pace.
 
 ## Requirements
 
@@ -41,6 +37,20 @@ you will need the following:
     because it is the foundation of all other math and science courses. You will need it in physics, chemistry, engineering, and even in computer science.
     <!-- show a video of how trigonometry is used in physics, chemistry, engineering, and computer science. -->
 
+
+## content
+- ### unit 1: Trigonometry
+    dealing with triangles and their properties and relations between their sides and angles.
+
+    this would be the most important unit in this course.
+
+- ### unit 2: analzying functions
+
+    dealing with functions and their properties and relations between their variables and the curve it makes.
+
+- ### unit 3: limits and derivatives
+
+    dealing with the limit of a function and the derivative of a function.
 
 ## How to study this course?
 
