@@ -309,3 +309,53 @@ class Content(Scene):
         self.wait()
         
 
+class CourseTips(Scene):
+    def construct(self):
+        course_tips = Text("نصائح الكورس", font=ARABIC_FONT, font_size=70,)
+        self.play(Write(course_tips, reverse=True))
+        self.add(course_tips)
+        self.wait()
+        self.play(course_tips.animate.move_to([7, 2.5, 0], aligned_edge=RIGHT).scale(0.8))
+        self.wait()
+
+        tip1 = Text("وقف وحل!", font=ARABIC_FONT, font_size=40, color=LOGO_YELLOW)
+        point1 = Dot([6, 1, 0])
+        tip1.next_to(point1, LEFT)
+        self.play(FadeIn(point1))
+        self.play(Write(tip1, reverse=True))
+        self.add(tip1)
+        tip1_image = SVGMobject("../../assets/images/stop.svg", stroke_color=LOGO_YELLOW, stroke_width=4).scale(0.5)
+        tip1_image.next_to(tip1, LEFT)
+        self.play(Write(tip1_image))
+        self.wait()
+
+        tip2 = Text("احرص على حل التمارين", font=ARABIC_FONT, font_size=40, color=LOGO_GREEN)
+        point2 = Dot([6, -0.5 , 0])
+        tip2.next_to(point2, LEFT)
+        self.play(FadeIn(point2))
+        self.play(Write(tip2, reverse=True))
+        self.add(tip2)
+        tip2_image = SVGMobject("../../assets/images/exercise.svg", stroke_color=LOGO_GREEN, stroke_width=5).scale(0.5)
+        tip2_image.next_to(tip2, LEFT)
+        self.play(Write(tip2_image))
+        
+        self.wait()
+
+        tip3 = Text("اسأل ما تريد!", font=ARABIC_FONT, font_size=40, color=LOGO_RED)
+        point3 = Dot([6, -2 , 0])
+        tip3.next_to(point3, LEFT)
+        self.play(FadeIn(point3))
+        self.play(Write(tip3, reverse=True))
+        self.add(tip3)
+        tip3_image = SVGMobject("../../assets/images/question.svg", stroke_color=LOGO_RED, stroke_width=5).scale(0.5)
+        tip3_image.next_to(tip3, LEFT)
+        self.play(Write(tip3_image))
+
+        self.wait()
+
+        self.play(FadeOut(point1), FadeOut(point2), FadeOut(point3))
+        self.play(Unwrite(tip1), Unwrite(tip2), Unwrite(tip3))
+        self.play(Unwrite(tip1_image), Unwrite(tip2_image), Unwrite(tip3_image))
+        self.play(Unwrite(course_tips))
+
+        self.wait()
