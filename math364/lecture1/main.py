@@ -63,5 +63,6 @@ class Logo(Scene):
 class Outro(Scene):
     def construct(self):
         outro = Text("شكراً لحضوركم", font=LOGO_FONT, font_size=70)
-        self.play(Write(outro))
+        self.play(Write(outro, reverse=True))
+        self.add(outro)
         self.wait(2)
