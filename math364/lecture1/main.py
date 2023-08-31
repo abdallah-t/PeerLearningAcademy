@@ -15,7 +15,7 @@ class Logo(Scene):
         
         
         font_arabic_logo = MarkupText(text=markup).scale(1.5)
-        font_arabic_logo.next_to(peer_learning_logo, LEFT * 0.01)
+        font_arabic_logo.next_to(peer_learning_logo, LEFT)
         #font_english_logo = Text("Peer Learning Team", color=LOGO_PURPLE, font="Sans", font_size=43)
         #font_english_logo.next_to(font_arabic_logo, DOWN)
         
@@ -44,7 +44,7 @@ class Logo(Scene):
         self.play(Write(peer_learning_logo))
         self.wait(0.5)
         self.play(peer_learning_logo.animate.shift(RIGHT * 4.5))
-        font_arabic_logo.next_to(peer_learning_logo, LEFT * 0.01)
+        font_arabic_logo.next_to(peer_learning_logo, LEFT)
         self.play(Write(font_arabic_logo, reverse=True))
         self.add(font_arabic_logo)
         
@@ -58,3 +58,10 @@ class Logo(Scene):
 
         self.play(Unwrite(peer_learning_logo), Unwrite(font_arabic_logo), Unwrite(peerlearning_instagram), Unwrite(peerlearning_account), Unwrite(instagram_logo), Unwrite(instagram_account), Unwrite(github_logo), Unwrite(github_account))
         self.wait()
+
+
+class Outro(Scene):
+    def construct(self):
+        outro = Text("شكراً لحضوركم", font=LOGO_FONT, font_size=70)
+        self.play(Write(outro))
+        self.wait(2)
