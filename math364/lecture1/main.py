@@ -11,9 +11,7 @@ markup = f'<span font_family="{LOGO_FONT}" foreground="{LOGO_YELLOW}">فريق</
 class Logo(Scene):
     def construct(self):
         plane = NumberPlane()
-        peer_learning_logo = ImageMobject("../../assets/images/logo.png")
-        peer_learning_logo.height = 4
-        peer_learning_logo.width = 4
+        peer_learning_logo = SVGMobject("../../assets/images/logo.svg", stroke_color=LOGO_GREEN, fill_color=LOGO_GREEN)
         
         
         font_arabic_logo = MarkupText(text=markup).scale(1.5)
@@ -22,28 +20,41 @@ class Logo(Scene):
         #font_english_logo.next_to(font_arabic_logo, DOWN)
         
 
+        peerlearning_instagram = SVGMobject("../../assets/images/IGLogo.svg", stroke_color=WHITE, fill_color=WHITE)
+        peerlearning_instagram.height = 0.4
+        peerlearning_instagram.width = 0.4
+        peerlearning_instagram.move_to([-6, -2.5, 0])
+        peerlearning_account = Text("peerlearning.bh",font=social_media_font, font_size=20)
+        peerlearning_account.next_to(peerlearning_instagram, RIGHT)
 
-        instagram_logo = ImageMobject("../../assets/images/IGLogo.png")
-        instagram_logo.height = 0.6
-        instagram_logo.width = 0.6
-        instagram_logo.move_to([-6, -2, 0])
-        instagram_account = Text("abdallahtantawy",font=social_media_font, font_size=30)
+        instagram_logo = SVGMobject("../../assets/images/IGLogo.svg", stroke_color=WHITE, fill_color=WHITE)
+        instagram_logo.height = 0.4
+        instagram_logo.width = 0.4
+        instagram_logo.move_to([3, -2.5, 0])
+        instagram_account = Text("abdallahtantawy",font=social_media_font, font_size=20)
         instagram_account.next_to(instagram_logo, RIGHT)
 
-        github_logo = ImageMobject("../../assets/images/GitHubLogo.png")
-        github_logo.height = 0.6
-        github_logo.width = 0.6
-        github_logo.move_to([-6, -3, 1])
-        github_account = Text("abdallah-t",font=social_media_font, font_size=30)
+        github_logo = SVGMobject("../../assets/images/GitHubLogo.svg", stroke_color=WHITE, fill_color=WHITE)
+        github_logo.height = 0.4
+        github_logo.width = 0.4
+        github_logo.next_to(instagram_logo, DOWN)
+        github_account = Text("abdallah-t",font=social_media_font, font_size=20)
         github_account.next_to(github_logo, RIGHT)
-        self.play(FadeIn(peer_learning_logo))
+
+        self.play(Write(peer_learning_logo))
         self.wait(0.5)
         self.play(peer_learning_logo.animate.shift(RIGHT * 4.5))
         font_arabic_logo.next_to(peer_learning_logo, LEFT * 0.01)
         self.play(Write(font_arabic_logo, reverse=True))
         self.add(font_arabic_logo)
-        self.play(FadeIn(instagram_logo))
+        
+        self.play(Write(peerlearning_instagram))
+        self.play(Write(peerlearning_account), run_time=0.5)
+        self.play(Write(instagram_logo))
         self.play(Write(instagram_account), run_time=0.5)
-        self.play(FadeIn(github_logo))
+        self.play(Write(github_logo))
         self.play(Write(github_account), run_time=0.5)
+        self.wait()
+
+        self.play(Unwrite(peer_learning_logo), Unwrite(font_arabic_logo), Unwrite(peerlearning_instagram), Unwrite(peerlearning_account), Unwrite(instagram_logo), Unwrite(instagram_account), Unwrite(github_logo), Unwrite(github_account))
         self.wait()
