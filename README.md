@@ -19,7 +19,7 @@ The assignments for each course are written in LaTeX. You can find the LaTeX sou
 
 ## Connect with Us
 
-- Follow PeerLearning Academy on Instagram: [![Instagram](https://img.shields.io/badge/Follow%20on%20Instagram-%40peerlearning.bh-9cf)](https://www.instagram.com/peerlearning.bh/)
+- Follow PeerLearning Academy on Instagram: [![Instagram](https://img.shields.io/badge/Follow%20on%20Instagram-%40peerlearningbh-9cf)](https://www.instagram.com/peerlearningbh/)
 - Follow me on Instagram: [![Instagram](https://img.shields.io/badge/Follow%20on%20Instagram-%40abdallahtantawy-9cf)](https://www.instagram.com/abdallahtantawy/)
 
 Please feel free to explore the content in this repository, watch the lecture videos, and work on the assignments to enhance your learning experience. If you have any questions or feedback, don't hesitate to [contact us](mailto:your@email.com).
