@@ -30,7 +30,7 @@ class CourseContent(Scene):
         content.next_to(point1, LEFT)
 
         point2 = Dot([6, -0.5 , 0])
-        calculator_tips = Text("نصائح لستخدام الآلة الحاسبة", font=ARABIC_FONT, font_size=40, color=LOGO_GREEN)
+        calculator_tips = Text("نصائح لاستخدام الآلة الحاسبة", font=ARABIC_FONT, font_size=40, color=LOGO_GREEN)
         calculator_tips.next_to(point2, LEFT)
 
         
