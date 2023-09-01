@@ -6,7 +6,7 @@ Welcome to the PeerLearning Academy repository! PeerLearning Academy is an educa
 
 In this section, you'll find links to the lecture videos hosted on YouTube, along with their thumbnails:
 ### lecture 0: introduction
-[![Introduction to PeerLearning Academy](assets\images\thumbnails\thumbnail0.jpg)](https://www.youtube.com/watch?v=Fa5-PXkFneA)
+[![Introduction to PeerLearning Academy](./assets/images/thumbnails/thumbnail0.jpg)](https://www.youtube.com/watch?v=Fa5-PXkFneA)
    - Description: In this lecture I introduce myself and I explain the purpose of this course.
 
 ## Assignments
@@ -14,7 +14,7 @@ In this section, you'll find links to the lecture videos hosted on YouTube, alon
 The assignments for each course are written in LaTeX. You can find the LaTeX source code for assignments in the following directories:
 
 ### lectrue 0
-- [Table of Content](math364\lecture0\table-of-content\table-of-content-final.pdf)
+- [Table of Content](./math364/lecture0/table-of-content/table-of-content-final.pdf)
 
 
 ## Connect with Us
