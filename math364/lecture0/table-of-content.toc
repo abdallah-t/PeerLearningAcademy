@@ -1,0 +1,22 @@
+\xpginauxfiletrue 
+\selectlanguage *{arabic}
+\contentsline {section}{\numberline {\LRE {١}}المتطابقات المثلثية والمعادلات المثلثية}{}{}%
+\contentsline {subsection}{\numberline {\LRE {١}.\LRE {١}}المتطابقات المثلثية}{}{}%
+\contentsline {subsection}{\numberline {\LRE {١}.\LRE {٢}}إثبات صحة المتطابقات المثلثية}{}{}%
+\contentsline {subsection}{\numberline {\LRE {١}.\LRE {٣}}المتطابقات المثلثية لمجموع زاويتين والفرق بينهما}{}{}%
+\contentsline {subsection}{\numberline {\LRE {١}.\LRE {٤}}المتطابقات المثلثية لضعف الزاوية ونصفها}{}{}%
+\contentsline {subsection}{\numberline {\LRE {١}.\LRE {٥}}حل المعادلات المثلثية}{}{}%
+\contentsline {section}{\numberline {\LRE {٢}}تحليل الدوال}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٢}.\LRE {١}}الدوال}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٢}.\LRE {٢}}تحليل التمثيل البياني للدوال والعلاقات}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٢}.\LRE {٣}}الاتصال وسلوك الدالة عند طرفي تعريفها، النهايات}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٢}.\LRE {٤}}القيم القصوى ومعدل التغير}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٢}.\LRE {٥}}الدوال الأصلية والتحويلات}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٢}.\LRE {٦}}العمليات على الدوال وتركيبها}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٢}.\LRE {٧}}العلاقات العكسية والدوال}{}{}%
+\contentsline {section}{\numberline {\LRE {٣}}النهايات والاشتقاق}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٣}.\LRE {١}}تقدير النهايات بيانيا}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٣}.\LRE {٢}}حساب النهايات جبريا}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٣}.\LRE {٣}}الاشتقاق}{}{}%
+\contentsline {subsection}{\numberline {\LRE {٣}.\LRE {٤}}المماس وسرعة المتجه}{}{}%
+\xpginauxfilefalse 
