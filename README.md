@@ -6,7 +6,7 @@ Welcome to the PeerLearning Academy repository! PeerLearning Academy is an educa
 
 In this section, you'll find links to the lecture videos hosted on YouTube, along with their thumbnails:
 ### lecture 0: introduction
-[![Introduction to PeerLearning Academy](./assets/images.thumbnails.thumbnail0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1)
+[![Introduction to PeerLearning Academy](assets\images\thumbnails\thumbnail0.jpg)](https://www.youtube.com/watch?v=Fa5-PXkFneA)
    - Description: In this lecture I introduce myself and I explain the purpose of this course.
 
 ## Assignments
