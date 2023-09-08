@@ -7,6 +7,9 @@ ARABIC_FONT = "Vazirmatn"
 ENGLISH_FONT = "CMU Serif"
 class angles(Scene):
     def construct(self):
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble(r"\usepackage{amssymb}")
+
         full_rotation = [r"400^{\text{g}}", r"2\pi^{\text{r}}", r"360^{\circ}"]
         angles = Text("الزوايا", font=ARABIC_FONT, font_size=70)
         self.play(Write(angles, reverse=True))
@@ -36,10 +39,38 @@ class angles(Scene):
         self.play(FadeOut(grads))
         angle_group.remove(grads)
         self.play(angle_group.animate.move_to(ORIGIN))
+        angle_group[1].save_state()
         self.wait()
-        self.play(angle_group[1].animate.move_to(ORIGIN).to_edge(UP), FadeOut(angle_group[0]).scale(0.8), run_time=2)
+        self.play(angle_group[1].animate.move_to(ORIGIN).to_edge(UP).scale(0.8), FadeOut(angle_group[0]), run_time=2)
         self.wait()
-        angle_definition = MathTex(r"")
+        degree_definition = MathTex(r"1", r"\text{ deg}", r":=", r"\dfrac{1}{360}", r"\text{ Rotations}", tex_template=myTemplate).scale(1.5)
+        self.play(Write(degree_definition))
+        self.wait()
+        self.play(Indicate(degree_definition[1], scale_factor=1.5, color=LOGO_YELLOW))
+        self.wait()
+        self.play(Indicate(degree_definition[2], scale_factor=1.5, color=LOGO_YELLOW))
+        self.wait()
+        self.play(Indicate(degree_definition[4], scale_factor=1.5, color=LOGO_YELLOW))
+        self.wait()
+        box = SurroundingRectangle(degree_definition[3][2:5])
+        self.play(Create(box))
+        self.wait()
+        why_360 = Text("why 360?", font=ENGLISH_FONT, font_size=30, color=LOGO_RED).next_to(box, DOWN)
+        self.play(Write(why_360))
+        self.add(why_360)
+        self.wait()
+        self.play(FadeOut(why_360, box, degree_definition))
+        self.wait()
+        self.play(angle_group[1].animate.restore(), FadeIn(angle_group[0]), run_time=2)
+        self.wait()
+        self.play(angle_group[0].animate.move_to(ORIGIN).to_edge(UP).scale(0.8), FadeOut(angle_group[1]), run_time=2)
+        
+
+        
+
+
+
+
 
         
         
