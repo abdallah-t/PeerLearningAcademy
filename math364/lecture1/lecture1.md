@@ -1,24 +1,25 @@
 # lecture 1 (Trig Functions)
-
+most of the things in this lecture are things that you've already learned in the previous semester, exactly in math262, but I'll try to explain them in a different way, and I'll try to give you some extra information that you might find useful.
 ## angles
 
-### what is an angle?
-
-What is an angle? In Plane Geometry, a figure which is formed by two rays or lines that shares a common endpoint is called an angle.
 ### degrees
 
 if asked you what is a degree, you would probably say that it is a unit of measurement for angles, but what does that mean?
+
+first of all. `deg` is short for degree. and this symbol $:=$ is called `equal by definition` and it means that the left side is defined as the right side.
+and concept of definition is very important in math,but you don't need now, you'll see it a lot in your math journey. `rotations` means `دورة`
 
 the definition of a degree is that it is 1/360 of a full rotation, that's it, it's that simple. but this question raises another question, why 360?
 
 there are many stories, but the most common one is because it in the past they've used base 60 system and it has many divisors, which means that it can be divided by many numbers without a remainder, and that makes it easier to work with.
 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, 180, 360
+
 ### radians
 
-radians are another unit of measurement for angles, but what is it?
+radians are another unit of measurement for angles, and it is the more common one in advanced math and physics. but what is a radian?
 
-the definition of a radian is that it is the angle that is formed when the arc length is equal to the radius of the circle, but what does that mean?
-
+the wikipedia definition of a radian is that it is the angle that is formed when the arc length is equal to the radius of the circle, but what does that mean?
+look at this circle, 
 what if the circle is very big? well, the arc length will be very big, and the angle will be the remain the same. as you can see.
 ### how to convert between degrees and radians?
 
@@ -109,3 +110,10 @@ if you've noticed, cosine and sine are basically the same but there are two lett
 co is short for complementary, which means that it is the same as the other function but with a 90 degree difference
 so cosine basically means the sine of the complementary angle which is this angle:
 
+## lecture's advice
+
+a flash memory drive get's worse the more you use it, it might lose some date if you overload it. The human brain is completely different. it actually memorizes things better if you give extra relevant information. Don't believe me? well, I'll recall the colors of the spectrum and try to memorize them. Red, Orange, Green, Blue, Indigo, Violet. now I'll recall them again but this time I'll give extra information. Red, Orange, Green, Blue, Indigo, Violet. Roy G. Biv. I bet you memorized the second one better.
+I've been giving you a lot of extra information that is easy to remember so you can memorize the lecture better.
+and if you want to learn more about this, you can watch this video by
+[droos online](https://www.youtube.com/watch?v=vnQnqMn4QuI&t=540s)
+[Vsauce](https://www.youtube.com/watch?v=UBVV8pch1dM)

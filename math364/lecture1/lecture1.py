@@ -64,14 +64,80 @@ class angles(Scene):
         self.play(angle_group[1].animate.restore(), FadeIn(angle_group[0]), run_time=2)
         self.wait()
         self.play(angle_group[0].animate.move_to(ORIGIN).to_edge(UP).scale(0.8), FadeOut(angle_group[1]), run_time=2)
+        self.wait
+
+        what_is_radian = MarkupText(f'<span font_family="{ARABIC_FONT}" foreground="{LOGO_YELLOW}">ما هو الراديان؟</span>')
+        self.play(Write(what_is_radian, reverse=True))
+        self.add(what_is_radian)
+        self.wait()
+        self.play(what_is_radian.animate.next_to(angles, DOWN, aligned_edge=RIGHT))
+        self.wait()
         
 
+        #circle animation
+        circle = Circle(radius=2, color=WHITE,).shift(DOWN)
+        radius_1 = Line(circle.get_center(), circle.point_at_angle(2 * PI), color=LOGO_RED, stroke_width=7)
+        radius_1_label = MathTex("r").next_to(radius_1, RIGHT).move_to(radius_1)
+        self.play(Create(circle), Create(radius_1))
+        self.wait()
+        self.play(FadeIn(radius_1_label), radius_1_label.animate.next_to(radius_1, DOWN))
+        self.wait()
+        normal = radius_1.copy()
+        self.play(normal.animate.rotate(-1 * PI / 2, about_point=circle.get_right()))
+        self.wait()
+        normal_label = MathTex("r").move_to(normal)
+        self.play(FadeIn(normal_label), normal_label.animate.next_to(normal, RIGHT))
+        self.wait()
+        arc = ArcBetweenPoints(circle.point_at_angle(1), circle.point_at_angle(2 * PI), radius=-2, color=LOGO_GREEN, stroke_width=7)
         
+        self.play(Transform(normal, arc), normal_label.animate.move_to(arc.get_center() + 0.5 * (RIGHT * np.cos(0.5) + UP * np.sin(0.5))))
+        self.wait()
+        radius_2 = Line(circle.get_center(), circle.point_at_angle(1), color=LOGO_RED, stroke_width=7)
+        radius_2_label = MathTex("r").move_to(radius_2)
+        self.play(Create(radius_2))
+        self.wait()
+        self.play(FadeIn(radius_2_label), radius_2_label.animate.move_to(radius_2.get_center() + 0.3 * (RIGHT * np.cos(PI - 1) + UP * np.sin(PI - 1))))
+        self.wait()
+        angle_between_radii = Angle(radius_1, radius_2, radius=0.5)
+        self.play(Create(angle_between_radii))
+        self.wait()
+        theta = MathTex(r"\theta").move_to(angle_between_radii).scale(0.8)
+        self.play(FadeIn(theta), theta.animate.move_to(angle_between_radii.get_center() + 0.4 * (RIGHT * np.cos(0.5) + UP * np.sin(0.5))))
+        self.wait()
+
+        theta.save_state()
+        self.play(theta.animate.shift(3 * RIGHT).scale(2).set_color(LOGO_YELLOW), run_time=2)
+        self.wait()
+        is_equal_to_1_rad = MathTex(r"= 1 \text{ rad}").next_to(theta, RIGHT)
+        self.play(Write(is_equal_to_1_rad))
+        self.wait()
+        self.play(theta.animate.restore(), FadeOut(is_equal_to_1_rad))
+        self.wait()
+        one_rad = MathTex(r"1 ^{r}", font_size=30).move_to(angle_between_radii.get_center() + 0.4 * (RIGHT * np.cos(0.5) + UP * np.sin(0.5)))
+        self.play(Transform(theta, one_rad))
 
 
 
 
+        sector = VGroup(arc, radius_1, radius_2, angle_between_radii)
+        
+        sectors = VGroup()
+        last = sector.copy()
+        self.play(FadeOut(radius_2_label, normal_label, radius_1_label))
+        self.wait()
+        for i in range(5):
+            sectors.add(last)
+            self.play(Rotate(last, 1, about_point=circle.get_center()))
+            self.play(theta.copy().animate.move_to(last[3].get_center() + 0.4 * (RIGHT * np.cos(1.5 + i) + UP * np.sin(1.5 + i))))
+            last = last.copy()
 
+
+        
+        little_angle = Angle(sectors[4][2],radius_1, radius=-1)
+        self.play(Create(little_angle))
+        self.wait()
+        little_theta = MathTex(r"\approx 0.28^{r}", font_size=25).move_to(little_angle)
+        self.play(little_theta.animate.move_to(little_angle.get_center() + 0.4 * (RIGHT * np.cos(0.5 * (2 * PI - 5)) + UP * np.sin(0.5 * (2 * PI - 5)))))
         
         
 
