@@ -122,23 +122,44 @@ class angles(Scene):
         sector = VGroup(arc, radius_1, radius_2, angle_between_radii)
         
         sectors = VGroup()
+        temp_thetas = VGroup()
+        temp_thetas.add(theta)
         last = sector.copy()
         self.play(FadeOut(radius_2_label, normal_label, radius_1_label))
         self.wait()
         for i in range(5):
             sectors.add(last)
             self.play(Rotate(last, 1, about_point=circle.get_center()))
-            self.play(theta.copy().animate.move_to(last[3].get_center() + 0.4 * (RIGHT * np.cos(1.5 + i) + UP * np.sin(1.5 + i))))
+            temp_theta = theta.copy()
+            self.play(temp_theta.animate.move_to(last[3].get_center() + 0.4 * (RIGHT * np.cos(1.5 + i) + UP * np.sin(1.5 + i))))
             last = last.copy()
+            temp_thetas.add(temp_theta)
 
 
         
-        little_angle = Angle(sectors[4][2],radius_1, radius=-1)
+        little_angle = Angle(sectors[4][2],radius_1, radius=0.5)
         self.play(Create(little_angle))
         self.wait()
-        little_theta = MathTex(r"\approx 0.28^{r}", font_size=25).move_to(little_angle)
-        self.play(little_theta.animate.move_to(little_angle.get_center() + 0.4 * (RIGHT * np.cos(0.5 * (2 * PI - 5)) + UP * np.sin(0.5 * (2 * PI - 5)))))
+        little_theta = MathTex(r"{0.28\cdots}^{r}", font_size=20).move_to(little_angle)
+        self.play(little_theta.animate.move_to(little_angle.get_center() + 0.8 * (RIGHT * np.cos(3 + PI) + UP * np.sin(PI + 3))))
+        temp_thetas.add(little_theta)
+        self.wait()
+        # group all angles 
+        thetas_to_point = AnimationGroup(*[temp_thetas[i].animate.move_to(circle.get_center() + 3 * RIGHT, aligned_edge=LEFT) for i in range(len(temp_thetas))], lag_ratio=0.15)
+        self.play(thetas_to_point)
+        two_pi_dec = MathTex(r"6.28\cdots^{r}").move_to(temp_thetas[0], aligned_edge=LEFT).scale(0.8)
+        two_pi = MathTex(r"2\pi^{r}").move_to(temp_thetas[0], aligned_edge=LEFT).scale(0.8)
+        self.play(thetas_to_point)
+        self.play(Transform(temp_thetas, two_pi_dec))
+        self.wait()
+        self.play(Transform(temp_thetas, two_pi))
+        self.wait()
+
         
+        self.play(FadeOut(*self.mobjects))
+        
+
         
 
         self.wait()
+        
