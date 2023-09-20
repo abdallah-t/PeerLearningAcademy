@@ -162,4 +162,82 @@ class angles(Scene):
         
 
         self.wait()
+
+class TransformingBetweenAngles(Scene):
+    def construct(self):
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble(r"\usepackage{amssymb}")
+        myTemplate.add_to_preamble(r"\usepackage{cancel}")
+        how_to_convert_text = "كيف نحول بين الزوايا؟"
+        how_to_convert = MarkupText(f'<span font_family="{ARABIC_FONT}" foreground="{WHITE}">{how_to_convert_text}</span>').scale(1.2)
+        self.play(Write(how_to_convert, reverse=True))
+        self.add(how_to_convert)
+        self.play(how_to_convert.animate.to_edge(UP).scale(0.8).set_color(LOGO_YELLOW))
+        self.wait()
         
+        # initial equations
+        full_rotation_deg = MathTex(r"1 \text{ Rotation}", r"=", r"360 \text{ deg}", tex_template=myTemplate)
+        full_rotation_rad = MathTex(r"1 \text{ Rotation}", r"=", r"2\pi \text{ rad}", tex_template=myTemplate)
+        equations = VGroup(full_rotation_deg, full_rotation_rad).arrange(DOWN, buff=1, aligned_edge=LEFT).move_to(ORIGIN)
+        self.play(Write(full_rotation_deg))
+        self.wait()
+        self.play(Write(full_rotation_rad))
+        self.wait()
+        
+        # manipulate the equations
+        steps =VGroup(MathTex(r"360", r"\text{ deg}", r"=", r"2\pi", r"\text{ rad}", tex_template=myTemplate),
+                      MathTex(r"\dfrac{360}{2}", r"\text{ deg}", r"=", r"\dfrac{2\pi}{2}", r"\text{ rad}", tex_template=myTemplate),
+                      MathTex(r"\dfrac{360}{2}", r"\text{ deg}", r"=", r"\dfrac{\cancel{2}\pi}{\cancel{2}}", r"\text{ rad}", tex_template=myTemplate),
+                      MathTex(r"180", r"\text{ deg}", r"=", r"\pi", r"\text{ rad}", tex_template=myTemplate),
+                      MathTex(r"\dfrac{180 \text{ deg}}{\pi \text{ rad}}", r"=", r"1", tex_template=myTemplate),
+                      MathTex(r"\dfrac{\pi \text{ rad}}{180 \text{ deg}}", r"=", r"1", tex_template=myTemplate),
+
+        )
+        self.play(TransformMatchingTex(equations, steps[0]))
+        for i in range(len(steps) - 2):
+            self.play(TransformMatchingTex(steps[i], steps[i + 1], transform_mismatches=True))
+            self.wait()
+        
+        steps[5].next_to(steps[4], RIGHT, buff=1)
+        final_equations = VGroup(steps[4], steps[5])
+        self.play(TransformFromCopy(steps[4], steps[5]))
+        self.wait()
+        self.play(final_equations.animate.arrange(RIGHT, buff=1).move_to(ORIGIN))
+        self.wait()
+        
+        self.play(final_equations.animate.scale(0.8).to_edge(DR))
+        # example 1
+        question_0_text = "مثال 1: حول 45 درجة إلى راديان"
+        question_0 = MarkupText(f'<span font_family="{ARABIC_FONT}" foreground="{WHITE}">{question_0_text}</span>')
+        self.play(Write(question_0, reverse=True))
+        self.add(question_0)
+        self.wait()
+        self.play(question_0.animate.scale(0.7).set_color(LOGO_GREEN).next_to(how_to_convert, DOWN).to_edge(RIGHT))
+        self.wait()
+        
+        deg_to_rad_example_1 =VGroup(MathTex(r"45", r"\text{ deg}", tex_template=myTemplate),
+                                     MathTex(r"45", r"\text{ deg}", r"\cdot", r"1", tex_template=myTemplate),
+                                     MathTex(r"45", r"\text{ deg}", r"\cdot", r"\dfrac{\pi \text{ rad}}{180 \text{ deg}}", tex_template=myTemplate, arg_separator=""),
+                                     MathTex(r"\dfrac{45 \text{ deg}}{1}", r"\cdot", r"\dfrac{\pi \text{ rad}}{180 \text{ deg}}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{45 \text{ deg} \cdot \pi \text{ rad}}{180 \text{ deg}}", tex_template=myTemplate),
+
+                                     
+        )
+
+
+        self.play(Write(deg_to_rad_example_1[0]))
+        for i in range(len(deg_to_rad_example_1) - 1):
+            self.play(TransformMatchingTex(deg_to_rad_example_1[i], deg_to_rad_example_1[i + 1], transform_mismatches=True))
+            self.play(index_labels(deg_to_rad_example_1[i + 1]))
+            self.wait()
+        
+        self.play(FadeOut(deg_to_rad_example_1))
+            
+
+        
+        self.wait()
+
+        self.wait()
+        
+        
+
