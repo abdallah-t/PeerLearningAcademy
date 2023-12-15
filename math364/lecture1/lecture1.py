@@ -168,6 +168,15 @@ class TransformingBetweenAngles(Scene):
         myTemplate = TexTemplate()
         myTemplate.add_to_preamble(r"\usepackage{amssymb}")
         myTemplate.add_to_preamble(r"\usepackage{cancel}")
+        arabic_template = TexTemplate()
+        arabic_template.add_to_preamble(r"% !TEX program = xelatex")
+        arabic_template.add_to_preamble(r"\usepackage[margin=0.75in]{geometry} % Load geometry before bidi")
+        arabic_template.add_to_preamble(r"\usepackage{polyglossia}")
+        arabic_template.add_to_preamble(r"\setmainlanguage{arabic}")
+        arabic_template.add_to_preamble(r"\setotherlanguage{english}")
+        arabic_template.add_to_preamble(r"\usepackage{fontspec}")
+        arabic_template.add_to_preamble(r"\newfontfamily\arabicfont[Script=Arabic, Scale=1.1]{Times New Roman}")
+
         how_to_convert_text = "كيف نحول بين الزوايا؟"
         how_to_convert = MarkupText(f'<span font_family="{ARABIC_FONT}" foreground="{WHITE}">{how_to_convert_text}</span>').scale(1.2)
         self.play(Write(how_to_convert, reverse=True))
@@ -217,22 +226,57 @@ class TransformingBetweenAngles(Scene):
         
         deg_to_rad_example_1 =VGroup(MathTex(r"45", r"\text{ deg}", tex_template=myTemplate),
                                      MathTex(r"45", r"\text{ deg}", r"\cdot", r"1", tex_template=myTemplate),
-                                     MathTex(r"45", r"\text{ deg}", r"\cdot", r"\dfrac{\pi \text{ rad}}{180 \text{ deg}}", tex_template=myTemplate, arg_separator=""),
+                                     MathTex(r"45", r"\text{ deg}", r"\cdot", r"\dfrac{\pi \text{ rad}}{180 \text{ deg}}", tex_template=myTemplate),
                                      MathTex(r"\dfrac{45 \text{ deg}}{1}", r"\cdot", r"\dfrac{\pi \text{ rad}}{180 \text{ deg}}", tex_template=myTemplate),
                                      MathTex(r"\dfrac{45 \text{ deg} \cdot \pi \text{ rad}}{180 \text{ deg}}", tex_template=myTemplate),
-
+                                     MathTex(r"\dfrac{45 \text{ \cancel{deg}} \cdot \pi \text{ rad}}{180 \text{ \cancel{deg}}}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{45 \cdot \pi \text{ rad}}{180}}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{45 \cdot \pi}{180}}", r"\text{ rad}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{\pi}{4}}", r"\text{ rad}", tex_template=myTemplate),
                                      
         )
 
 
         self.play(Write(deg_to_rad_example_1[0]))
         for i in range(len(deg_to_rad_example_1) - 1):
-            self.play(TransformMatchingTex(deg_to_rad_example_1[i], deg_to_rad_example_1[i + 1], transform_mismatches=True))
-            self.play(index_labels(deg_to_rad_example_1[i + 1]))
+            self.play(TransformMatchingShapes(deg_to_rad_example_1[i], deg_to_rad_example_1[i + 1], transform_mismatches=False))
             self.wait()
         
-        self.play(FadeOut(deg_to_rad_example_1))
-            
+        self.play(FadeOut(deg_to_rad_example_1[-1]))
+        self.wait()
+        self.play(FadeOut(question_0))
+        
+        # example 2
+        question_1_text = r"مثال 2: حول \pi راديان إلى درجات"
+        question_1 = Tex(question_1_text, tex_template=TexFontTemplates.)
+        self.play(Write(question_1, reverse=True))
+        self.add(question_1)
+        self.wait()
+        self.play(question_1.animate.scale(0.7).set_color(LOGO_GREEN).next_to(how_to_convert, DOWN).to_edge(RIGHT))
+        self.wait()
+
+        rad_to_deg_example_1 =VGroup(MathTex(r"\pi", r"\text{ rad}", tex_template=myTemplate),
+                                     MathTex(r"\pi", r"\text{ rad}", r"\cdot", r"1", tex_template=myTemplate),
+                                     MathTex(r"\pi", r"\text{ rad}", r"\cdot", r"\dfrac{180 \text{ deg}}{\pi \text{ rad}}", tex_template=myTemplate, arg_separator=""),
+                                     MathTex(r"\dfrac{\pi \text{ rad}}{1}", r"\cdot", r"\dfrac{180 \text{ deg}}{\pi \text{ rad}}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{\pi \text{ rad} \cdot 180 \text{ deg}}{\pi \text{ rad}}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{\pi \text{ \cancel{rad}} \cdot 180 \text{ deg}}{\pi \text{ \cancel{rad}}}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{\pi \cdot 180 \text{ deg}}{\pi}}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{\pi \cdot 180}{\pi}}", r"\text{ deg}", tex_template=myTemplate),
+                                     MathTex(r"\dfrac{180}{1}}", r"\text{ deg}", tex_template=myTemplate),
+                                     MathTex(r"180", r"\text{ deg}", tex_template=myTemplate),
+
+        )
+        
+        self.play(Write(rad_to_deg_example_1[0]))
+        for i in range(len(rad_to_deg_example_1) - 1):
+            self.play(TransformMatchingShapes(rad_to_deg_example_1[i], rad_to_deg_example_1[i + 1], transform_mismatches=False))
+            self.wait()
+        
+        self.play(FadeOut(rad_to_deg_example_1[-1]))
+        
+
+
 
         
         self.wait()
