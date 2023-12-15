@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 23.5) (preloaded format=xelatex 2023.10.14)  15 DEC 2023 19:18
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 23.5) (preloaded format=xelatex 2023.10.14)  15 DEC 2023 19:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -556,8 +556,7 @@ Package fontspec Info: Font family 'ReadexPro(0)' created for font 'Readex
 
 (C:\Program Files\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-No file mcq.aux.
+) (mcq.aux)
 \openout1 = `mcq.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -571,6 +570,7 @@ LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
 7.
+
 (C:\Program Files\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -754,25 +754,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/ReadexPro(0)/b/n' will be
-(Font)              scaled to size 13.20007pt on input line 23.
-LaTeX Info: Redefining \rmfamily on input line 23.
-LaTeX Info: Redefining \sffamily on input line 23.
-LaTeX Info: Redefining \ttfamily on input line 23.
-
-c:/Users/Abdullah/OneDrive - University of Technology Bahrain/Documents/MasterF
-older/Projects/peerlearning/math364/question_bank/mcq_bank/mcq.tex:23: Extra },
- or forgotten \endgroup.
-\@ssect ...kip #1}\interlinepenalty \@M #5\@@par }
-                                                  \endgroup \else \def \@svs...
-l.23 ...pi}{2} - \theta\right)}{1 + \sec\theta}$}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-[1
+(Font)              scaled to size 11.00006pt on input line 28.
+ [1
 
 ] [2]
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -921,19 +904,14 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-11>
  ***********
- )
-(\end occurred inside a group at level 2)
-
-### simple group (level 2) entered at line 23 ({)
-### semi simple group (level 1) entered at line 23 (\begingroup)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 8429 strings out of 410598
- 194330 string characters out of 5795386
- 1919879 words of memory out of 5000000
- 29388 multiletter control sequences out of 15000+600000
- 562842 words of font info for 70 fonts, out of 8000000 for 9000
+ 8443 strings out of 410598
+ 194523 string characters out of 5795386
+ 1923879 words of memory out of 5000000
+ 29396 multiletter control sequences out of 15000+600000
+ 564549 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 83i,8n,100p,1387b,416s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,8n,100p,1387b,310s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on mcq.pdf (3 pages).
